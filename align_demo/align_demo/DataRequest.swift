@@ -14,11 +14,8 @@ class DataRequest: NSObject {
     
     override init() {
         super.init()
-
         guard let json = serializeJSON(from: animalsList) else {return}
-        print(json)
         guard let arrayOfAnimals = createArrayOfStructs(with: json) else {return}
-        print(arrayOfAnimals)
     }
     
     func createArrayOfStructs(with string : String) -> [Animal]?{
