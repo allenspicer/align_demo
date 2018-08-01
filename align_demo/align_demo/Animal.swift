@@ -13,5 +13,8 @@ struct Animal : Decodable{
     var type = String()
     var size = String()
     var color = String()
+    var sizeType : String {
+        return "\(size) \(type)"
+    }
 }
 
