@@ -32,6 +32,16 @@ class TableViewController: UITableViewController {
     
 }
 
+extension TableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let viewController = ViewController()
+//        let VC1 = self.storyboard!.instantiateViewControllerWithIdentifier("MyViewController") as! ViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+        
+        
+//        navigationController?.present(viewController, animated: true, completion: {})
+    }
+}
 
 
 
