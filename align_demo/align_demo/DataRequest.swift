@@ -11,11 +11,13 @@ import UIKit
 class DataRequest: NSObject {
     
     var animalsList: [[String:String]] = [["type":"frog", "size":"small", "color":"green"],["type":"dog", "size":"medium", "color":"brown"],["type":"bird", "size":"small", "color":"white"]]
+    var dataObject : [Animal]?
     
     override init() {
         super.init()
         guard let json = serializeJSON(from: animalsList) else {return}
         guard let arrayOfAnimals = createArrayOfStructs(with: json) else {return}
+        dataObject = arrayOfAnimals
     }
     
     func createArrayOfStructs(with string : String) -> [Animal]?{
